@@ -2,7 +2,7 @@
 	"$schema": "https://schema.tauri.app/config/2",
 	"productName": "gibterm",
 	"version": "1.0.0",
-	"identifier": "app.crynta.gibterm",
+	"identifier": "app.ikhwan-satrio.gibterm",
 	"build": {
 		"beforeDevCommand": "bun dev",
 		"devUrl": "http://localhost:5173",
@@ -81,7 +81,7 @@
 	"plugins": {
 		"updater": {
 			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNCQUJGRDhBQjYwRTM0NjkKUldScE5BNjJpdjJyT3dIN0dqbUpHaDA4QW1GaDVmTTllRXdZVk96dFNTRUZ3Y2hiVGszYjFqRloK",
-			"endpoints": ["https://github.com/crynta/gibterm/releases/latest/download/latest.json"]
+			"endpoints": ["https://github.com/ikhwan-satrio/gibterm/releases/latest/download/latest.json"]
 		}
 	}
 }

@@ -143,7 +143,7 @@
 
             meta = with pkgs.lib; {
               description = "Terminal emulator";
-              homepage = "https://github.com/crynta/gibterm";
+              homepage = "https://github.com/ikhwan-satrio/gibterm";
               license = licenses.mit;
               platforms = platforms.linux;
               mainProgram = "gibterm";

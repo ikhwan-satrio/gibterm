@@ -4,7 +4,7 @@
 
 Gibterm is a **Tauri v2 desktop terminal emulator** with a SvelteKit frontend (Svelte 5 runes, Tailwind CSS v4, shadcn-svelte) and a Rust backend providing PTY, shell sessions, git, LSP, file system, and agent/hook features.
 
-Product name: **Gibterm**. Identifier: `app.crynta.gibterm`.
+Product name: **Gibterm**. Identifier: `app.ikhwan-satrio.gibterm`.
 
 ## Commands
 

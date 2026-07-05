@@ -52,19 +52,19 @@ Gibterm provides a Nix flake for building and installing on NixOS.
 ### Quick Run
 
 ```sh
-nix run github:crynta/gibterm
+nix run github:ikhwan-satrio/gibterm
 ```
 
 ### Install to User Profile
 
 ```sh
-nix profile install github:crynta/gibterm
+nix profile install github:ikhwan-satrio/gibterm
 ```
 
 ### Install from Source
 
 ```sh
-git clone https://github.com/crynta/gibterm.git
+git clone https://github.com/ikhwan-satrio/gibterm.git
 cd gibterm
 nix profile install .
 ```
@@ -78,7 +78,7 @@ Add gibterm as a flake input in your system configuration:
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    gibterm.url = "github:crynta/gibterm";
+    gibterm.url = "github:ikhwan-satrio/gibterm";
   };
 
   outputs = { self, nixpkgs, gibterm, ... }: {
