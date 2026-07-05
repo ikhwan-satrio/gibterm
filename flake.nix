@@ -22,7 +22,7 @@
 
         deb = pkgs.fetchurl {
           url = debUrl;
-          hash = ""; # isi hash nya setelah build pertama
+          hash = "sha256-+zAVEp8k8Hm/i7E4ikltjsBESlMGorFvFHZFvd7oOuQ=";
         };
 
         runtimeDeps = with pkgs; [
