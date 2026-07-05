@@ -71,7 +71,11 @@
             dpkg -x $src unpacked
 
             mkdir -p $out/bin
-            cp unpacked/usr/bin/gibterm $out/bin/gibterm
+            if [ -f unpacked/usr/bin/gibterm ]; then
+              cp unpacked/usr/bin/gibterm $out/bin/gibterm
+            else
+              cp unpacked/usr/bin/app $out/bin/gibterm
+            fi
 
             mkdir -p $out/share
             cp -r unpacked/usr/share/* $out/share/
