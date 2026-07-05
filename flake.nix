@@ -18,13 +18,13 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        version = "1.0.0";
+        version = "1.1.0";
 
         debUrl = "https://github.com/ikhwan-satrio/gibterm/releases/download/v${version}/gibterm_${version}_amd64.deb";
 
         deb = pkgs.fetchurl {
           url = debUrl;
-          hash = "sha256-+zAVEp8k8Hm/i7E4ikltjsBESlMGorFvFHZFvd7oOuQ=";
+          hash = "sha256:88470b3a02064cafa89c0d7fc54f77ffbd8e1c50c3b8322a14f6f1c58994feda";
         };
 
         runtimeDeps = with pkgs; [
