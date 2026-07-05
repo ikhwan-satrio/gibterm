@@ -1,9 +1,9 @@
 mod common;
 
 use common::{git_available, FsFixture, GitRepoFixture};
-use app_lib::modules::fs::grep::{fs_glob, fs_grep};
-use app_lib::modules::fs::search::{fs_list_files, fs_search};
-use app_lib::modules::fs::tree::{fs_read_dir, list_subdirs, EntryKind};
+use gibterm_lib::modules::fs::grep::{fs_glob, fs_grep};
+use gibterm_lib::modules::fs::search::{fs_list_files, fs_search};
+use gibterm_lib::modules::fs::tree::{fs_read_dir, list_subdirs, EntryKind};
 
 #[test]
 fn grep_finds_matches_and_returns_relative_paths() {

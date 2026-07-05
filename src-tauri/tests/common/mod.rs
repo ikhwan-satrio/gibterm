@@ -4,8 +4,8 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 
 use tempfile::TempDir;
-use app_lib::modules::fs::to_canon;
-use app_lib::modules::workspace::{WorkspaceEnv, WorkspaceRegistry};
+use gibterm_lib::modules::fs::to_canon;
+use gibterm_lib::modules::workspace::{WorkspaceEnv, WorkspaceRegistry};
 
 pub struct GitRepoFixture {
     pub registry: WorkspaceRegistry,

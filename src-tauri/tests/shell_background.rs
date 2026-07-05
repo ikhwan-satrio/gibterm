@@ -2,8 +2,8 @@
 
 use std::time::{Duration, Instant};
 
-use app_lib::modules::shell::background;
-use app_lib::modules::workspace::WorkspaceEnv;
+use gibterm_lib::modules::shell::background;
+use gibterm_lib::modules::workspace::WorkspaceEnv;
 
 fn wait_until<F: Fn() -> bool>(timeout: Duration, check: F) -> bool {
     let deadline = Instant::now() + timeout;

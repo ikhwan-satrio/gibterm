@@ -14,5 +14,5 @@ fn main() {
         }
     }
 
-    app_lib::run()
+    gibterm_lib::run()
 }

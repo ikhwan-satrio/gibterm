@@ -2,11 +2,11 @@ mod common;
 
 use common::{git_available, GitRepoFixture};
 use tempfile::TempDir;
-use app_lib::modules::fs::to_canon;
-use app_lib::modules::git::errors::GitError;
-use app_lib::modules::git::operations;
-use app_lib::modules::git::types::DiscardEntry;
-use app_lib::modules::workspace::{WorkspaceEnv, WorkspaceRegistry};
+use gibterm_lib::modules::fs::to_canon;
+use gibterm_lib::modules::git::errors::GitError;
+use gibterm_lib::modules::git::operations;
+use gibterm_lib::modules::git::types::DiscardEntry;
+use gibterm_lib::modules::workspace::{WorkspaceEnv, WorkspaceRegistry};
 
 fn skip_if_no_git() -> bool {
     if !git_available() {

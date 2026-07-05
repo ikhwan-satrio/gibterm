@@ -1,5 +1,5 @@
 [package]
-name = "app"
+name = "gibterm"
 version = "0.8.2"
 description = "gibterm — an open-source terminal emulator"
 authors = ["ikhwan-satrio"]
@@ -10,7 +10,7 @@ edition = "2021"
 # The `_lib` suffix may seem redundant but it is necessary
 # to make the lib name unique and wouldn't conflict with the bin name.
 # This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
-name = "app_lib"
+name = "gibterm_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
