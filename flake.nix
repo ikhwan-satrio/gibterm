@@ -70,13 +70,25 @@
 
             dpkg -x $src unpacked
 
-            mkdir -p $out
-            cp -r unpacked/usr/* $out/
+            mkdir -p $out/bin
+            cp unpacked/usr/bin/app $out/bin/gibterm
 
-            # rewrite desktop file Exec path
-            if [ -f $out/share/applications/gibterm.desktop ]; then
-              sed -i "s|Exec=.*|Exec=$out/bin/gibterm|" $out/share/applications/gibterm.desktop
-            fi
+            mkdir -p $out/share
+            cp -r unpacked/usr/share/* $out/share/
+
+            chmod +x $out/bin/gibterm
+
+            # fix desktop file
+            sed -i "s|Exec=app|Exec=gibterm|" $out/share/applications/gibterm.desktop
+            sed -i "s|Icon=app|Icon=gibterm|" $out/share/applications/gibterm.desktop
+            sed -i "s|StartupWMClass=app|StartupWMClass=gibterm|" $out/share/applications/gibterm.desktop
+
+            # rename icons
+            for size in 32x32 128x128 "256x256@2"; do
+              if [ -f "$out/share/icons/hicolor/$size/apps/app.png" ]; then
+                mv "$out/share/icons/hicolor/$size/apps/app.png" "$out/share/icons/hicolor/$size/apps/gibterm.png"
+              fi
+            done
 
             runHook postInstall
           '';
