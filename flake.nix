@@ -6,14 +6,16 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-utils,
-    ...
-  }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      ...
+    }:
     flake-utils.lib.eachDefaultSystem (
-      system: let
+      system:
+      let
         pkgs = nixpkgs.legacyPackages.${system};
 
         version = "1.0.0";
@@ -35,7 +37,8 @@
           openssl
           sqlite
         ];
-      in {
+      in
+      {
         devShells.default = pkgs.mkShell {
           buildInputs = runtimeDeps;
           nativeBuildInputs = with pkgs; [
@@ -58,9 +61,14 @@
           nativeBuildInputs = with pkgs; [
             dpkg
             autoPatchelfHook
+            wrapGAppsHook4
           ];
 
-          buildInputs = runtimeDeps;
+          buildInputs = runtimeDeps ++ (with pkgs; [
+            glib
+            gsettings-desktop-schemas
+            hicolor-icon-theme
+          ]);
 
           dontConfigure = true;
           dontBuild = true;
@@ -97,7 +105,7 @@
             description = "Terminal emulator";
             homepage = "https://github.com/ikhwan-satrio/gibterm";
             license = licenses.mit;
-            platforms = ["x86_64-linux"];
+            platforms = [ "x86_64-linux" ];
             mainProgram = "gibterm";
           };
         };
