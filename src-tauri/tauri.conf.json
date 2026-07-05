@@ -6,8 +6,8 @@
 	"build": {
 		"beforeDevCommand": "bun dev",
 		"devUrl": "http://localhost:5173",
-		"beforeBuildCommand": "bun build",
-		"frontendDist": "../dist",
+		"beforeBuildCommand": "bun run build",
+		"frontendDist": "../build",
 		"removeUnusedCommands": true
 	},
 	"app": {
