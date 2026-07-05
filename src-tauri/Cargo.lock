@@ -1674,7 +1674,7 @@ dependencies = [
 
 [[package]]
 name = "gibterm"
-version = "0.8.2"
+version = "1.1.0"
 dependencies = [
  "bytes",
  "dirs 6.0.0",

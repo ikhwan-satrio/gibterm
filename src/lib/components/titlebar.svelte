@@ -33,7 +33,7 @@
 	>
 		{#each tabStore.tabs as tab (tab.id)}
 			<button
-				class="flex items-center gap-1.5 h-7 px-2.5 rounded-md text-xs cursor-pointer whitespace-nowrap transition-all duration-150 {tab.active
+				class="group flex items-center gap-1.5 h-7 px-2.5 rounded-md text-xs cursor-pointer whitespace-nowrap transition-all duration-150 {tab.active
 					? 'bg-[#333] text-white'
 					: 'bg-transparent text-[#888] hover:bg-[#2a2a2a] hover:text-[#ccc]'}"
 				onclick={() => tabStore.setActive(tab.id)}

@@ -1,6 +1,6 @@
 [package]
 name = "gibterm"
-version = "0.8.2"
+version = "1.1.0"
 description = "gibterm — an open-source terminal emulator"
 authors = ["ikhwan-satrio"]
 license = "MIT"
