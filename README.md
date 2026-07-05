@@ -45,6 +45,70 @@ bun tauri build
 
 Output will be in `src-tauri/target/release/bundle/`.
 
+## NixOS Installation
+
+Gibterm provides a Nix flake for building and installing on NixOS.
+
+### Quick Run
+
+```sh
+nix run github:crynta/gibterm
+```
+
+### Install to User Profile
+
+```sh
+nix profile install github:crynta/gibterm
+```
+
+### Install from Source
+
+```sh
+git clone https://github.com/crynta/gibterm.git
+cd gibterm
+nix profile install .
+```
+
+### System-Wide Install (NixOS Module)
+
+Add gibterm as a flake input in your system configuration:
+
+```nix
+# /etc/nixos/flake.nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    gibterm.url = "github:crynta/gibterm";
+  };
+
+  outputs = { self, nixpkgs, gibterm, ... }: {
+    nixosConfigurations.myhost = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./configuration.nix
+        {
+          environment.systemPackages = [
+            gibterm.packages.x86_64-linux.default
+          ];
+        }
+      ];
+    };
+  };
+}
+```
+
+### Development with Nix
+
+```sh
+# enter dev shell (all tools pre-installed)
+nix develop
+
+# then run as usual
+bun tauri dev
+```
+
+If you use [direnv](https://direnv.net/), the dev shell is loaded automatically via `.envrc`.
+
 ## Scripts
 
 | Command | Description |
